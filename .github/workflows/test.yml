@@ -12,11 +12,14 @@ jobs:
       run: |
         echo "job1"
         sleep 120
-    timeout-minutes: 1
+    timeout-minutes: 2
   job2:
     name: job2
     runs-on: ubuntu-latest
     steps:
     - name: echo job2
-      run: echo "job2"
-    timeout-minutes: 3
+      run: | 
+      echo "job2"
+    - name: yawn
+      run: sleep 120
+    timeout-minutes: 1
