@@ -19,7 +19,7 @@ jobs:
     steps:
     - name: echo job2
       run: | 
-      echo "job2"
+        echo "job2"
     - name: yawn
       run: sleep 120
     timeout-minutes: 1
