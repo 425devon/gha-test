@@ -10,8 +10,8 @@ jobs:
     steps:
     - name: echo job1
       run: |
-        echo "job1"
         sleep 120
+        echo "job1"
     timeout-minutes: 2
   job2:
     name: job2
@@ -20,6 +20,14 @@ jobs:
     - name: echo job2
       run: | 
         echo "job2"
-    - name: yawn
-      run: sleep 120
+    timeout-minutes: 1
+  job3:
+    name: job3
+    runs-on: ubuntu-latest
+    needs: job1
+    steps:
+    - name: echo job2
+      run: |
+        sleep 120 
+        echo "job3"
     timeout-minutes: 1
