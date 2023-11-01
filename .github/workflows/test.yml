@@ -1,0 +1,22 @@
+name: test-timeout
+
+on:
+  workflow_dispatch:
+
+jobs:
+  job1:
+    name: job1
+    runs-on: ubuntu-latest
+    steps:
+    - name: echo job1
+      run: |
+        echo "job1"
+        sleep 120
+    timeout-minutes: 1
+  job2:
+    name: job2
+    runs-on: ubuntu-latest
+    steps:
+    - name: echo job2
+      run: echo "job2"
+    timeout-minutes: 3
